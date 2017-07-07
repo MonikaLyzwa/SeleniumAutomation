@@ -1,0 +1,8 @@
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\bin\Debug\SeleniumFirst.exe.config
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\bin\Debug\SeleniumFirst.exe
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\bin\Debug\SeleniumFirst.pdb
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\bin\Debug\WebDriver.dll
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\bin\Debug\WebDriver.xml
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\obj\Debug\SeleniumFirst.csprojResolveAssemblyReference.cache
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\obj\Debug\SeleniumFirst.exe
+c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\obj\Debug\SeleniumFirst.pdb
