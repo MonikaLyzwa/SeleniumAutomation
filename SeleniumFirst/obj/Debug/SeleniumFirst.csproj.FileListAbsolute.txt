@@ -6,3 +6,4 @@ c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\Selenium
 c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\obj\Debug\SeleniumFirst.csprojResolveAssemblyReference.cache
 c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\obj\Debug\SeleniumFirst.exe
 c:\users\monika.lyzwa.silvermedia\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\obj\Debug\SeleniumFirst.pdb
+C:\Users\monika.lyzwa.SILVERMEDIA\Documents\Visual Studio 2015\Projects\SeleniumFirst\SeleniumFirst\bin\Debug\chromedriver.exe
