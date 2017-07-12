@@ -1,31 +1,28 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeleniumFirst
 {
+    [TestFixture]
     class Program
     {
 
         //Create the reference for our browser
-        IWebDriver driver = new ChromeDriver();
+        IWebDriver _driver = null;
         static void Main(string[] args)
         {
 
         }
 
         [SetUp]
-        public void Initialize ()
+        public void Initialize()
         {
             //Create the reference for our browser
-            IWebDriver driver = new ChromeDriver();
+            _driver = new ChromeDriver(); //You had local variable that was different to the global one.
             //Navigate to Google page
-            driver.Navigate().GoToUrl("http://www.google.com");
+            _driver.Navigate().GoToUrl("http://www.google.com");
             Console.WriteLine("Opened URL");
         }
 
@@ -33,7 +30,7 @@ namespace SeleniumFirst
         public void ExecuteTest()
         {
 
-            IWebElement element = driver.FindElement(By.Name("q"));
+            IWebElement element = _driver.FindElement(By.Name("q"));
 
             //Perform Ops
             element.SendKeys("executeautomation");
@@ -44,7 +41,7 @@ namespace SeleniumFirst
         [TearDown]
         public void CleanUp()
         {
-            driver.Close();
+            _driver?.Quit(); //_driver.Close() only closes the browser's window. To fully close the driver, release and kill the process you have to call _driver.Quit()
             Console.WriteLine("Close the browser");
         }
     }
