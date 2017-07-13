@@ -11,6 +11,8 @@ namespace SeleniumFirst
 
         //Create the reference for our browser
         IWebDriver _driver = null;
+        private IWebDriver driver;
+
         static void Main(string[] args)
         {
 
@@ -35,8 +37,13 @@ namespace SeleniumFirst
             //Initial
             SeleniumSetMethods.EnterText(_driver, "Initial", "executeautomation", "Name");
 
+            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText(_driver, "TitleId", "Id", "Id"));
+
+            Console.WriteLine("The value from my Initial is:" + SeleniumGetMethods.GetText(_driver, "Initial", "Name", "Name"));
+
             //Click
             SeleniumSetMethods.Click(_driver, "Save", "Name", "Name");
+            
         }
 
         [TearDown]
