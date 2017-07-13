@@ -22,20 +22,21 @@ namespace SeleniumFirst
             //Create the reference for our browser
             _driver = new ChromeDriver(); //You had local variable that was different to the global one.
             //Navigate to Google page
-            _driver.Navigate().GoToUrl("http://www.google.com");
+            _driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
             Console.WriteLine("Opened URL");
         }
 
         [Test]
         public void ExecuteTest()
         {
+            //Title
+            SeleniumSetMethods.SelectDropDown(_driver, "TitleId", "Mr.", "Id");
 
-            IWebElement element = _driver.FindElement(By.Name("q"));
+            //Initial
+            SeleniumSetMethods.EnterText(_driver, "Initial", "executeautomation", "Name");
 
-            //Perform Ops
-            element.SendKeys("executeautomation");
-
-            Console.WriteLine("Executed Test");
+            //Click
+            SeleniumSetMethods.Click(_driver, "Save", "Name", "Name");
         }
 
         [TearDown]
