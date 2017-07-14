@@ -10,8 +10,8 @@ namespace SeleniumFirst
     {
 
         //Create the reference for our browser
-        IWebDriver _driver = null;
-        private IWebDriver driver;
+        //IWebPropertiesCollection.PropertiesCollection.driver _PropertiesCollection.PropertiesCollection.driver = null;
+        //private IWebPropertiesCollection.PropertiesCollection.driver PropertiesCollection.PropertiesCollection.driver;
 
         static void Main(string[] args)
         {
@@ -21,10 +21,12 @@ namespace SeleniumFirst
         [SetUp]
         public void Initialize()
         {
+            PropertiesCollection.driver = new ChromeDriver();
+
             //Create the reference for our browser
-            _driver = new ChromeDriver(); //You had local variable that was different to the global one.
+            //PropertiesCollection.driver = new ChromeDriver.driver(); //You had local variable that was different to the global one.
             //Navigate to Google page
-            _driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
+            PropertiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
             Console.WriteLine("Opened URL");
         }
 
@@ -32,24 +34,24 @@ namespace SeleniumFirst
         public void ExecuteTest()
         {
             //Title
-            SeleniumSetMethods.SelectDropDown(_driver, "TitleId", "Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown( "TitleId", "Mr.", PropertyType.Id);
 
             //Initial
-            SeleniumSetMethods.EnterText(_driver, "Initial", "executeautomation", "Name");
+            SeleniumSetMethods.EnterText("Initial", "executeautomation", PropertyType.Name);
 
-            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText(_driver, "TitleId", "Id", "Id"));
+            Console.WriteLine("The value from my Title is:" + SeleniumGetMethods.GetText("TitleId", PropertyType.Id));
 
-            Console.WriteLine("The value from my Initial is:" + SeleniumGetMethods.GetText(_driver, "Initial", "Name", "Name"));
+            Console.WriteLine("The value from my Initial is:" + SeleniumGetMethods.GetText("Initial", PropertyType.Name));
 
             //Click
-            SeleniumSetMethods.Click(_driver, "Save", "Name", "Name");
+            SeleniumSetMethods.Click("Save", "Name", PropertyType.Name);
             
         }
 
         [TearDown]
         public void CleanUp()
         {
-            _driver?.Quit(); //_driver.Close() only closes the browser's window. To fully close the driver, release and kill the process you have to call _driver.Quit()
+            PropertiesCollection.driver?.Quit(); //_PropertiesCollection.driver.Close() only closes the browser's window. To fully close the PropertiesCollection.driver, release and kill the process you have to call _PropertiesCollection.driver.Quit()
             Console.WriteLine("Close the browser");
         }
     }
