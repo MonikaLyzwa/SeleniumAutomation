@@ -26,19 +26,18 @@ namespace SeleniumFirst
             //Create the reference for our browser
             //PropertiesCollection.driver = new ChromeDriver.driver(); //You had local variable that was different to the global one.
             //Navigate to Google page
-            PropertiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&Password=&Login=Login");
+            PropertiesCollection.driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
             Console.WriteLine("Opened URL");
         }
 
         [Test]
         public void ExecuteTest()
         {
-            //Initalize the page by calling its reference
-            EAPageObject page = new EAPageObject();
+            //Login to application
+            LoginPageObject pageLogin = new LoginPageObject();
+            EAPageObject pageAE = pageLogin.Login("execute", "automation");
 
-            page.txtInitial.SendKeys("executeautomation");
-
-            page.btnSave.Click();
+            pageAE.FillUserForm("Monika", "Łyżwa", "Automation");
             
             //Title
             //SeleniumSetMethods.SelectDropDown( "TitleId", "Mr.", PropertyType.Id);
