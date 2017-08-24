@@ -32,11 +32,11 @@ namespace SeleniumFirst
         public EAPageObject Login(string userName, string password)
         {
             //Login
-            txtUserName.SendKeys(userName);
+            txtUserName.EnterText(userName);
             //Password
-            txtPassword.SendKeys(password);
+            txtPassword.EnterText(password);
             //Click button
-            btnLogin.Submit();
+            btnLogin.Click();
 
             //Return the page object
             return new EAPageObject();
