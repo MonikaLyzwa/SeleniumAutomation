@@ -13,12 +13,12 @@ namespace SeleniumFirst
         //<summary>
         //Extended method for entering text in the control
         //</summary>
-        //<param name = "element"> </param>
-        //<param name = "value"></param>
+        //<param name="element"> </param>
+        //<param name="value"></param>
         public static void EnterText(this IWebElement element, string value)
-            {
+        {
             element.SendKeys(value);
-            }
+        }
 
         //<summary>
         //Click into a button, checkbox, option etc

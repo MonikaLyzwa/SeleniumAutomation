@@ -18,15 +18,12 @@ namespace SeleniumFirst
 
 
         [FindsBy(How = How.Name, Using = "UserName")]
-
         public IWebElement txtUserName { get; set; }
 
         [FindsBy(How = How.Name, Using = "Password")]
-
         public IWebElement txtPassword { get; set; }
 
         [FindsBy(How = How.Name, Using = "Login")]
-
         public IWebElement btnLogin { get; set; }
 
         public EAPageObject Login(string userName, string password)
@@ -36,7 +33,7 @@ namespace SeleniumFirst
             //Password
             txtPassword.EnterText(password);
             //Click button
-            btnLogin.Click();
+            btnLogin.Submit();
 
             //Return the page object
             return new EAPageObject();
