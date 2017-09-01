@@ -33,11 +33,13 @@ namespace SeleniumFirst
         [Test]
         public void ExecuteTest()
         {
+            ExcelLib.PopulateInCollection(@"C:\Users\monika.lyzwa.SILVERMEDIA\Documents\Visual Studio 2015\Projects\data.xlsx");
+            
             //Login to application
             LoginPageObject pageLogin = new LoginPageObject();
-            EAPageObject pageAE = pageLogin.Login("execute", "automation");
+            EAPageObject pageAE = pageLogin.Login(ExcelLib.ReadData(1, "UserName"), ExcelLib.ReadData(1, "Password"));
 
-            pageAE.FillUserForm("Monika", "Łyżwa", "Automation");
+            pageAE.FillUserForm(ExcelLib.ReadData(1, "Initial"), ExcelLib.ReadData(1, "MiddleName"), ExcelLib.ReadData(1, "FirstName"));
             
             //Title
             //SeleniumSetMethods.SelectDropDown( "TitleId", "Mr.", PropertyType.Id);
