@@ -18,9 +18,13 @@ namespace SeleniumFirst
             //Createopenxmlreader via ExcelReaderFactory
             IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
             //Set the first row as column name
-            excelReader.IsFirstRowAsColumnNames = true;
+            //excelReader.IsFirstRowAsColumnNames = true;
+            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                UseColumnDataType = true
+            });
             //Return as DataSet
-            DataSet result = excelReader.AsDataSet();
+            //DataSet result = excelReader.AsDataSet();
             //Get all the tables
             DataTableCollection table = result.Tables;
             //Store it in DataTable
