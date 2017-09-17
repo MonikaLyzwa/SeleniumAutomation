@@ -1,41 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
-using SeleniumParallelTest;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 
 namespace SeleniumFirst
 {
     [TestFixture]
-    public class FirefoxParallelTests : Hooks
+    public class FirefoxParallelTests : Base
     {
+        public FirefoxParallelTests()
+        {
+            var pathToBinary = @"C:\Program Files\Mozilla Firefox\firefox.exe";
+            Driver = new FirefoxDriver(
+                new FirefoxOptions()
+                {
+                    BrowserExecutableLocation = pathToBinary
+                });
+        }
+
         [Test]
         public void FirefoxTest()
         {
             Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
             Driver.FindElement(By.Name("UserName")).SendKeys("execute");
-            Driver.FindElement(By.Name("UserName")).SendKeys("automation");
-            Driver.FindElement(By.Name("Login"));
-            Assert.That(Driver.PageSource.Contains("Selenium"), Is.EqualTo(true), "The text selenium does not exist");
+            Driver.FindElement(By.Name("Password")).SendKeys("automation");
+            var element = Driver.FindElement(By.Name("Login")).FindElement(By.Name("Login"));
 
+            element.Click();
+            Assert.That(Driver.PageSource.Contains("User Form"), Is.EqualTo(true), "The text automation does not exist");
         }
 
         [TestFixture]
-        public class ChromeParallelTests : Hooks
+        public class ChromeParallelTests : Base
         {
-         [Test]
-         public void ChromeTest()
-         {
-              Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
-              Driver.FindElement(By.Name("UserName")).SendKeys("execute");
-              Driver.FindElement(By.Name("UserName")).SendKeys("automation");
-              Driver.FindElement(By.Name("Login"));
-              Assert.That(Driver.PageSource.Contains("Automation"), Is.EqualTo(true), "The text automation does not exist");
-          }
+            public ChromeParallelTests()
+            {
+                Driver = new ChromeDriver();
+            }
+
+            [Test]
+            public void ChromeTest()
+            {
+                Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
+                Driver.FindElement(By.Name("UserName")).SendKeys("execute");
+                Driver.FindElement(By.Name("Password")).SendKeys("automation");
+                var element = Driver.FindElement(By.Name("Login")).FindElement(By.Name("Login"));
+
+                element.Click();
+                Assert.That(Driver.PageSource.Contains("User Form"), Is.EqualTo(true), "The text automation does not exist");
+            }
         }
     }
 }

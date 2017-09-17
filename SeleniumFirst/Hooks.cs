@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.Firefox;
+﻿using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using SeleniumFirst;
 
 namespace SeleniumParallelTest
@@ -9,8 +10,13 @@ namespace SeleniumParallelTest
 
         public Hooks()
         {
-            Driver = new FirefoxDriver();
+            // Driver = new FirefoxDriver();
+            Driver = new ChromeDriver();
         }
 
+        ~Hooks()
+        {
+            Driver.Quit();
+        }
     }
 }

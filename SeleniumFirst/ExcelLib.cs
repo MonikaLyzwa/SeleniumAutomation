@@ -1,17 +1,17 @@
-﻿using ExcelDataReader;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ExcelDataReader;
+
+using System;
 
 namespace SeleniumFirst
 {
-    class ExcelLib
+    internal class ExcelLib
     {
-        private static DataTable ExcelToDataTable (string fileName)
+        private static DataTable ExcelToDataTable(string fileName)
         {
             //open file and returns as Stream
             FileStream stream = File.Open(fileName, FileMode.Open, FileAccess.Read);
@@ -34,7 +34,7 @@ namespace SeleniumFirst
             return resultTable;
         }
 
-        static List <Datacollection> dataCol = new List<Datacollection>();
+        private static List<Datacollection> dataCol = new List<Datacollection>();
 
         public static void PopulateInCollection(string fileName)
         {
@@ -56,6 +56,7 @@ namespace SeleniumFirst
                 }
             }
         }
+
         public static string ReadData(int rowNumber, string columnName)
         {
             try
@@ -73,7 +74,6 @@ namespace SeleniumFirst
                 return null;
             }
         }
-
     }
 
     public class Datacollection
@@ -82,5 +82,4 @@ namespace SeleniumFirst
         public string colName { get; set; }
         public string colValue { get; set; }
     }
-
 }

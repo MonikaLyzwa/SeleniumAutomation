@@ -1,21 +1,19 @@
 ﻿using System;
+using System.IO;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace SeleniumFirst
 {
     [TestFixture]
-    class Program
+    internal class Program
     {
-
         //Create the reference for our browser
         //IWebPropertiesCollection.PropertiesCollection.driver _PropertiesCollection.PropertiesCollection.driver = null;
         //private IWebPropertiesCollection.PropertiesCollection.driver PropertiesCollection.PropertiesCollection.driver;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-
         }
 
         [SetUp]
@@ -33,14 +31,18 @@ namespace SeleniumFirst
         [Test]
         public void ExecuteTest()
         {
-            ExcelLib.PopulateInCollection(@"C:\Users\monika.lyzwa.SILVERMEDIA\Documents\Visual Studio 2015\Projects\data.xlsx");
-            
+            var pathToExcel = @"C:\Users\monika.lyzwa.SILVERMEDIA\Documents\Visual Studio 2015\Projects\data.xlsx";
+            var exists = File.Exists(pathToExcel);
+            Assert.True(exists);
+
+            ExcelLib.PopulateInCollection(pathToExcel);
+
             //Login to application
             LoginPageObject pageLogin = new LoginPageObject();
             EAPageObject pageAE = pageLogin.Login(ExcelLib.ReadData(1, "UserName"), ExcelLib.ReadData(1, "Password"));
 
             pageAE.FillUserForm(ExcelLib.ReadData(1, "Initial"), ExcelLib.ReadData(1, "MiddleName"), ExcelLib.ReadData(1, "FirstName"));
-            
+
             //Title
             //SeleniumSetMethods.SelectDropDown( "TitleId", "Mr.", PropertyType.Id);
 
@@ -53,7 +55,6 @@ namespace SeleniumFirst
 
             //Click
             //SeleniumSetMethods.Click("Save", "Name", PropertyType.Name);
-            
         }
 
         [TearDown]
