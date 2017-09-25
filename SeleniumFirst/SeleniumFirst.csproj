@@ -92,6 +92,8 @@
       <Link>chromedriver.exe</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="2017-09contributing.png" />
+    <Content Include="2017-09pr-button.png" />
     <Content Include="geckodriver.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
