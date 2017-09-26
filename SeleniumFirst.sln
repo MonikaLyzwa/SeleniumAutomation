@@ -5,12 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumFirst", "SeleniumFirst\SeleniumFirst.csproj", "{A3A6CFA7-A4B4-4969-9CAC-B510AF13BA7D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82C98B2D-024F-4DD7-95DE-66CB9B52050D}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Desktop\2017-09contributing.png = ..\..\..\..\Desktop\2017-09contributing.png
-		..\..\..\..\Desktop\2017-09pr-button.png = ..\..\..\..\Desktop\2017-09pr-button.png
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
