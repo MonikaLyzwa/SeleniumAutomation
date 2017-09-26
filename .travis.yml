@@ -2,7 +2,7 @@ language: csharp
 mono: 
     - latest
 solution: SeleniumFirst.sln
-script: 
-    - ./build.sh
-    - ./test.sh
-    - grep "Test Results" build.log
+#script: 
+    #- ./build.sh
+    #- ./test.sh
+    #- grep "Test Results" build.log
