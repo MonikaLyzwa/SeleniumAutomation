@@ -6,3 +6,5 @@ solution: SeleniumFirst.sln
     #- ./build.sh
     #- ./test.sh
     #- grep "Test Results" build.log
+notifications:
+    email: false
